@@ -1,0 +1,118 @@
+/* === TESTIMONIALS SECTION STRUCTURE === */
+.testimonials {
+  padding: 4rem 2rem;
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-detail {
+  margin-bottom: 2rem;
+}
+
+/* === SLIDER CONTAINER === */
+.testimonial-slider {
+  position: relative;
+  width: 100%;
+  height: 31.25rem; /* 500px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === TRACK STRUCTURE === */
+.testimonial-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 62.5rem; /* 1000px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === CARD LAYOUT === */
+.testimonial-card {
+  position: absolute;
+  width: 18.75rem; /* 300px */
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  border: 0.0625rem solid white; /* 1px */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+/* === IMAGE PLACEHOLDER === */
+.testimonial-image {
+  width: 5rem; /* 80px */
+  height: 5rem;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background-color: #ccc;
+}
+
+/* === TEXT LAYOUT === */
+.testimonial-content {
+  text-align: center;
+}
+
+.testimonial-name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === DOTS INDICATOR === */
+.testimonial-dots {
+  position: absolute;
+  bottom: 1.25rem; /* 20px */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.625rem; /* 10px */
+  z-index: 10;
+}
+
+.testimonial-dot {
+  width: 0.625rem; /* 10px */
+  height: 0.625rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+  background: white;
+  width: 1.875rem; /* 30px */
+  border-radius: 0.3125rem; /* 5px */
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 17.5rem; /* 280px */
+  }
+}
+
+/* === DESKTOP INTERACTION === */
+@media (min-width: 769px) {
+  .testimonial-track {
+    cursor: grab;
+  }
+
+  .testimonial-track:active {
+    cursor: grabbing;
+  }
+}
