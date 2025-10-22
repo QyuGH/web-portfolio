@@ -1,4 +1,3 @@
-
 @import url("./variables.css");
 
 header {
@@ -9,11 +8,55 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-md);
-  background-color: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-soft);
+  padding: var(--space-md) 2rem;
   z-index: 1000;
+  
+  /* Initial state - transparent */
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  box-shadow: none;
+  border-bottom: 1px solid transparent;
+  
+  /* Smooth transitions for all properties */
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrolled state - glassmorphism active */
+header.scrolled {
+  background-color: rgba(11, 11, 37, 0.7); /* Semi-transparent navy */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15),
+              0 4px 16px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  padding: var(--space-sm) var(--space-md);
+}
+
+/* Add subtle glow effect on scroll */
+header.scrolled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent) 50%,
+    transparent
+  );
+  opacity: 0;
+  animation: glowLine 3s ease-in-out infinite;
+}
+
+@keyframes glowLine {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.5; }
 }
 
 header > a,
@@ -25,10 +68,51 @@ nav > a {
 
 header > h1 {
   font-size: 1.5rem;
+  transition: var(--transition-normal);
+  position: relative;
 }
+
+/* Add subtle text glow on scroll */
+header.scrolled > h1 {
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
 .nav-btn-container {
   display: flex;
   gap: 2rem;
+}
+
+.nav-btn-container .link {
+  position: relative;
+  padding: 0.5rem 0;
+  transition: var(--transition-normal);
+}
+
+/* Enhanced link hover effect */
+.nav-btn-container .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-secondary),
+    var(--color-accent)
+  );
+  box-shadow: 0 0 10px var(--color-glow);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn-container .link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-btn-container .link:hover {
+  color: var(--color-accent-light);
+  text-shadow: 0 0 15px var(--color-glow);
 }
 
 header > a:last-child {
@@ -42,6 +126,7 @@ header > a:last-child {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
   z-index: 99;
   opacity: 0;
   pointer-events: none;
@@ -61,6 +146,7 @@ header > a:last-child {
   height: 1.4rem;
   cursor: pointer;
   z-index: 1002;
+  transition: var(--transition-fast);
 }
 
 .burger-menu .line {
@@ -73,7 +159,12 @@ header > a:last-child {
 
 .burger-menu:hover .line {
   background-color: var(--color-accent);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 10px var(--color-glow);
+}
+
+/* Animate burger menu lines on scroll */
+header.scrolled .burger-menu .line {
+  background-color: var(--color-accent-light);
 }
 
 .close-menu {
@@ -109,7 +200,7 @@ header > a:last-child {
 
 .close-menu:hover .line {
   background-color: var(--color-accent);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 15px var(--color-glow-strong);
 }
 
 @media (max-width: 768px) {
@@ -121,12 +212,16 @@ header > a:last-child {
     right: -70%;
     width: 70%;
     height: 100dvh;
-    background-color: var(--color-bg-mid);
+    background-color: rgba(26, 20, 66, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(139, 92, 246, 0.2);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     gap: 1rem;
     opacity: 0;
     pointer-events: none;
-    transition: var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-wrapper.nav-open {
@@ -146,10 +241,13 @@ header > a:last-child {
   .link {
     padding: 1rem;
     transition: var(--transition-normal);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
 
   .link:hover {
-    background-color: var(--color-bg-dark);
+    background-color: rgba(139, 92, 246, 0.1);
+    border-left: 3px solid var(--color-accent);
+    text-shadow: 0 0 15px var(--color-glow);
   }
 
   .close-menu {
@@ -187,4 +285,3 @@ header > a:last-child {
     z-index: 1;
   }
 }
-

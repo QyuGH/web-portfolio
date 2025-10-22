@@ -1,4 +1,3 @@
-// === TESTIMONIAL SLIDER ===
 const testimonialCards = document.querySelectorAll(".testimonial-card");
 const testimonialDots = document.querySelectorAll(".testimonial-dot");
 const sliderContainer = document.querySelector(".testimonial-slider");
@@ -12,7 +11,6 @@ const totalCards = testimonialCards.length;
 let autoPlayInterval;
 let isAutoPlaying = true;
 
-// === RESET ALL CARDS (for clean transitions between breakpoints) ===
 function resetAllCards() {
   testimonialCards.forEach((card) => {
     card.className = "testimonial-card"; // Reset to base class only
@@ -24,7 +22,6 @@ function resetAllCards() {
   });
 }
 
-// === UPDATE SLIDER FUNCTION ===
 function updateSlider() {
   const isMobile = window.innerWidth <= 768;
 
@@ -37,7 +34,6 @@ function updateSlider() {
   updateDots();
 }
 
-// === MOBILE SLIDER (Single card with slide animation) ===
 function updateMobileSlider() {
   const direction = currentIndex > previousIndex ? "next" : "prev";
 
@@ -89,7 +85,6 @@ function updateMobileSlider() {
   });
 }
 
-// === DESKTOP SLIDER (3-card circular carousel) ===
 function updateDesktopSlider() {
   const isTablet = window.innerWidth <= 1024;
   const radius = isTablet ? 350 : 450;
@@ -124,14 +119,12 @@ function updateDesktopSlider() {
   });
 }
 
-// === UPDATE DOTS ===
 function updateDots() {
   testimonialDots.forEach((dot, index) => {
     dot.classList.toggle("active", index === currentIndex);
   });
 }
 
-// === NAVIGATION FUNCTIONS ===
 function nextSlide() {
   previousIndex = currentIndex;
   currentIndex = (currentIndex + 1) % totalCards;
@@ -150,7 +143,6 @@ function goToSlide(index) {
   updateSlider();
 }
 
-// === AUTO-PLAY FUNCTIONS ===
 function startAutoPlay() {
   if (isAutoPlaying) {
     autoPlayInterval = setInterval(() => {
@@ -167,8 +159,6 @@ function resumeAutoPlay() {
   stopAutoPlay();
   startAutoPlay();
 }
-
-// === EVENT LISTENERS ===
 
 // Pause on hover
 sliderContainer.addEventListener("mouseenter", () => {
@@ -255,16 +245,14 @@ testimonialTrack.addEventListener("mouseleave", () => {
   }
 });
 
-// Update on window resize
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(() => {
-    resetAllCards(); // Reset everything first
-    updateSlider(); // Then update to new layout
-  }, 100); // Debounce to avoid too many updates
+    resetAllCards();
+    updateSlider();
+  }, 100);
 });
 
-// === INITIALIZE ===
 updateSlider();
 startAutoPlay();

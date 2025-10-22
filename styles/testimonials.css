@@ -1,6 +1,5 @@
 @import url('preset.css');
 
-/* === TESTIMONIALS SECTION === */
 .testimonials {
   padding: 4rem 2rem;
   max-width: 75rem;
@@ -18,7 +17,6 @@
   margin-bottom: 2rem;
 }
 
-/* === SLIDER CONTAINER === */
 .testimonial-slider {
   position: relative;
   width: 100%;
@@ -29,7 +27,6 @@
   overflow: hidden;
 }
 
-/* === TRACK === */
 .testimonial-track {
   position: relative;
   width: 100%;
@@ -39,7 +36,6 @@
   justify-content: center;
 }
 
-/* === CARD BASE === */
 .testimonial-card {
   position: absolute;
   width: 22rem;
@@ -51,7 +47,6 @@
   cursor: pointer;
 }
 
-/* === CARD CONTENT === */
 .testimonial-image {
   width: 4rem;
   height: 4rem;
@@ -73,7 +68,6 @@
   font-size: .75rem;
 }
 
-/* === DOTS INDICATOR === */
 .testimonial-dots {
   position: absolute;
   bottom: 1.25rem;
@@ -99,7 +93,6 @@
   border-radius: 0.3125rem;
 }
 
-/* === DESKTOP: 3-CARD CAROUSEL (Above 768px) === */
 @media (min-width: 769px) {
   .testimonial-track {
     perspective: 62.5rem;
@@ -111,7 +104,6 @@
   }
 }
 
-/* === TABLET: SMALLER 3-CARD LAYOUT === */
 @media (max-width: 1024px) and (min-width: 769px) {
   .testimonial-slider {
     height: 28rem;
@@ -136,7 +128,6 @@
   }
 }
 
-/* === MOBILE: SINGLE CARD WITH SLIDE ANIMATION === */
 @media (max-width: 768px) {
   .testimonial-slider {
     height: 26rem;
@@ -166,19 +157,16 @@
     font-size: 0.9rem;
   }
 
-  /* Hide inactive cards */
   .testimonial-card:not(.mobile-active) {
     opacity: 0;
     pointer-events: none;
   }
 
-  /* Show active card */
   .testimonial-card.mobile-active {
     opacity: 1;
     z-index: 10;
   }
 
-  /* Slide animations */
   .testimonial-card.slide-in-left {
     animation: slideInFromLeft 0.5s ease-out forwards;
   }
@@ -196,7 +184,6 @@
   }
 }
 
-/* === SMALL MOBILE === */
 @media (max-width: 480px) {
   .testimonial-slider {
     height: 24rem;
@@ -212,7 +199,6 @@
   }
 }
 
-/* === MOBILE SLIDE KEYFRAMES === */
 @keyframes slideInFromRight {
   0% {
     transform: translateX(50%);
