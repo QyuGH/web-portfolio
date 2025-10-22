@@ -1,7 +1,7 @@
-@import url('preset.css');
+@import url("preset.css");
 
 .projects {
-  padding: 2rem;
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,44 +9,29 @@
   box-sizing: border-box;
 }
 
-.section-heading {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-detail {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-/* Grid layout for projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: var(--space-lg);
   width: 100%;
   max-width: 1200px;
   box-sizing: border-box;
 }
 
-/* Project cards */
 .project-card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  border-radius: 0.5rem;
   overflow: hidden;
-  border: 1px solid white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--glass-radius); 
+  border: 1px solid var(--glass-border); 
+  transition: var(--transition-normal); 
+  background: var(--glass-bg);
 }
 
 .project-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-glow-hover);
 }
 
 /* Image area */
@@ -85,29 +70,17 @@
   font-weight: 600;
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-
-/* Tablets */
 @media (max-width: 1024px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(240px, 1fr));
     gap: 1.5rem;
   }
-
-  .project-card {
-    border-width: 0.75px;
-  }
 }
 
-/* Large phones & small tablets */
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-  }
-
-  .project-card {
-    border-width: 0.5px;
   }
 
   .project-title {
@@ -121,7 +94,6 @@
   }
 }
 
-/* Small phones — still 2 columns minimum */
 @media (max-width: 550px) {
   .project-grid {
     grid-template-columns: 1fr;

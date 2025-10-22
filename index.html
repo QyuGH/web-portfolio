@@ -14,16 +14,31 @@
     <link rel="stylesheet" href="styles/contacts.css" />
   </head>
   <body>
+    <div class="overlay"></div>
+
     <header class="header">
       <h1>Mark Anton Cahutay</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#tools">Tools</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a href="">Burger</a>
+      <div class="nav-wrapper">
+        
+        <div class="close-menu">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+        </div>
+
+        <nav class="nav-btn-container">
+          <a class="link" href="#about">About</a>
+          <a class="link" href="#tools">Tools</a>
+          <a class="link" href="#projects">Projects</a>
+          <a class="link" href="#testimonials">Testimonials</a>
+          <a class="link" href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="burger-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </header>
 
     <main>
@@ -37,19 +52,25 @@
           </div>
 
           <div class="hero-btn">
-            <a href="" class="btn">Hire Me</a>
+            <a href="#contact" class="btn">Collaborate</a>
             <a href="" class="btn">Download Resume</a>
           </div>
 
           <div class="hero-icon">
-            <a href=""
+            <a href="https://www.facebook.com/share/19npBU53eT/" target="_blank"
               ><img src="images/icons/facebook.png" alt="facebook"
             /></a>
-            <a href=""
+            <a
+              href="https://www.instagram.com/marqyyuu?igsh=MThxb2RrN2pha3M5Yw=="
+              target="_blank"
               ><img src="images/icons/instagram.png" alt="instagram"
             /></a>
-            <a href=""><img src="images/icons/github.png" alt="github" /></a>
-            <a href=""
+            <a href="https://github.com/QyuGH" target="_blank"
+              ><img src="images/icons/github.png" alt="github"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/mark-anton-cahutay-88453b347"
+              target="_blank"
               ><img src="images/icons/linkedin.png" alt="linkedin"
             /></a>
           </div>
@@ -269,26 +290,41 @@
         <div class="project-grid">
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/gwa.png" alt="GWA Calculator" />
+              <img
+                src="images/projects/edubox.jpg"
+                alt="EduBox Learning Platform"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">GWA Calculator</h2>
-              <p class="project-type">Personal Portfolio</p>
-              <p class="project-description">SAAS Website Design</p>
+              <h2 class="project-title">EduBox</h2>
+              <p class="project-type">Learning Platform Website</p>
+              <p class="project-description">
+                A course management platform that allows users to learn, track
+                progress, and complete activities interactively.
+              </p>
               <div class="project-tech">
-                <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                <p>
+                  <strong>Technologies:</strong> React, Tailwind, Node.js,
+                  MongoDB
+                </p>
               </div>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/caffeine.png" alt="Caffeine" />
+              <img
+                src="images/projects/cardealer.jpg"
+                alt="Droom Car Dealership Website"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">Caffeine</h2>
-              <p class="project-type">Website for a Model</p>
-              <p class="project-description">Workout App Design</p>
+              <h2 class="project-title">Droom</h2>
+              <p class="project-type">Car Dealership Website</p>
+              <p class="project-description">
+                A modern dealership website where users can browse, compare, and
+                inquire about vehicles.
+              </p>
               <div class="project-tech">
                 <p><strong>Technologies:</strong> React, Tailwind, Node.js</p>
               </div>
@@ -298,14 +334,17 @@
           <div class="project-card">
             <div class="project-image">
               <img
-                src="images/projects/portfolio.png"
-                alt="Personal Portfolio"
+                src="images/projects/worldplate.jpg"
+                alt="WorldPlate Restaurant Website"
               />
             </div>
             <div class="project-content">
-              <h2 class="project-title">Personal Portfolio</h2>
-              <p class="project-type">Website for a Technician</p>
-              <p class="project-description">Workout App Design</p>
+              <h2 class="project-title">WorldPlate</h2>
+              <p class="project-type">Restaurant Website</p>
+              <p class="project-description">
+                A restaurant website showcasing menus, chef specials, and an
+                online reservation feature.
+              </p>
               <div class="project-tech">
                 <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
               </div>
@@ -314,12 +353,17 @@
 
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/trabahunt.png" alt="TrabaHunt" />
+              <img
+                src="images/projects/luxora.jpg"
+                alt="Luxora Hotel Booking Website"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">TrabaHunt</h2>
-              <p class="project-type">Personal Portfolio</p>
-              <p class="project-description">Dashboard Design</p>
+              <h2 class="project-title">Luxora</h2>
+              <p class="project-type">Travel Booking Website</p>
+              <p class="project-description">
+                A travel booking platform for adventurers.
+              </p>
               <div class="project-tech">
                 <p><strong>Technologies:</strong> React, Firebase, Tailwind</p>
               </div>
@@ -328,40 +372,38 @@
 
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/gwa.png" alt="GWA Calculator" />
+              <img
+                src="images/projects/shopease.jpg"
+                alt="Shopease E-Commerce Website"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">GWA Calculator 2.0</h2>
-              <p class="project-type">Personal Tool</p>
-              <p class="project-description">Improved Academic Tracker</p>
+              <h2 class="project-title">Shopease</h2>
+              <p class="project-type">Online E-Commerce Website</p>
+              <p class="project-description">
+                An e-commerce platform designed for browsing, adding to cart,
+                and securely purchasing products online.
+              </p>
               <div class="project-tech">
-                <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                <p><strong>Technologies:</strong> React, Tailwind, Firebase</p>
               </div>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/caffeine.png" alt="Caffeine Mobile" />
+              <img
+                src="images/projects/cminor.jpg"
+                alt="C Minor Coffee Shop Website"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">Caffeine Mobile</h2>
-              <p class="project-type">App Design</p>
-              <p class="project-description">Coffee Order Dashboard</p>
-              <div class="project-tech">
-                <p><strong>Technologies:</strong> React Native, Tailwind</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/projects/portfolio.png" alt="Portfolio V2" />
-            </div>
-            <div class="project-content">
-              <h2 class="project-title">Portfolio V2</h2>
-              <p class="project-type">Personal Portfolio</p>
-              <p class="project-description">Modern UI Redesign</p>
+              <h2 class="project-title">C Minor</h2>
+              <p class="project-type">Coffee Shop Website</p>
+              <p class="project-description">
+                A cozy coffee shop website featuring menu highlights, online
+                ordering, and loyalty rewards.
+              </p>
               <div class="project-tech">
                 <p><strong>Technologies:</strong> React, Tailwind</p>
               </div>
@@ -370,12 +412,38 @@
 
           <div class="project-card">
             <div class="project-image">
-              <img src="images/projects/trabahunt.png" alt="TrabaHunt Pro" />
+              <img
+                src="images/projects/zonixx.jpg"
+                alt="Zonixx Fitness Website"
+              />
             </div>
             <div class="project-content">
-              <h2 class="project-title">TrabaHunt Pro</h2>
-              <p class="project-type">Web App</p>
-              <p class="project-description">Job Finder Dashboard</p>
+              <h2 class="project-title">Zonixx</h2>
+              <p class="project-type">Fitness Website</p>
+              <p class="project-description">
+                A fitness-focused website offering workout plans, trainer
+                profiles, and progress tracking.
+              </p>
+              <div class="project-tech">
+                <p><strong>Technologies:</strong> React, Tailwind, Firebase</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img
+                src="images/projects/societhy.jpg"
+                alt="Societhy Event Booking Website"
+              />
+            </div>
+            <div class="project-content">
+              <h2 class="project-title">Societhy</h2>
+              <p class="project-type">Event Booking Website</p>
+              <p class="project-description">
+                An event management site where users can browse, register, and
+                book tickets for upcoming events.
+              </p>
               <div class="project-tech">
                 <p><strong>Technologies:</strong> React, Firebase, Tailwind</p>
               </div>
@@ -392,42 +460,85 @@
         <div class="testimonial-slider">
           <div class="testimonial-track">
             <div class="testimonial-card">
-              <div class="testimonial-image"></div>
+              <div class="testimonial-image">
+                <img
+                  src="images/profile/franz-hermmann.jpg"
+                  alt="Franz Hermmann"
+                />
+              </div>
               <div class="testimonial-content">
-                <h3 class="testimonial-name">Mark Anton</h3>
-                <p class="testimonial-text">Superb web designing, highly recommend this developer for your website</p>
+                <h3 class="testimonial-name">Franz Hermmann</h3>
+                <p class="testimonial-text">
+                  <em
+                    >"Lovely websites. You can really count on Anton for
+                    developing your ideas into a complete websites. "</em
+                  >
+                </p>
               </div>
             </div>
 
             <div class="testimonial-card active">
-              <div class="testimonial-image"></div>
+              <div class="testimonial-image">
+                <img src="images/profile/lh44.jpg" alt="Lewis Hamilton" />
+              </div>
               <div class="testimonial-content">
-                <h3 class="testimonial-name">Anton</h3>
-                <p class="testimonial-text">Websites are great and responsive, truly one of the developers of all time</p>
+                <h3 class="testimonial-name">Lewis Hamilton</h3>
+                <p class="testimonial-text">
+                  <em
+                    >"Working with Anton was an absolute pleasure. What
+                    impressed me most was his ability to explain complex
+                    technical concepts in simple terms."</em
+                  >
+                </p>
               </div>
             </div>
 
             <div class="testimonial-card">
-              <div class="testimonial-image"></div>
+              <div class="testimonial-image">
+                <img src="images/profile/pfp-male2.jpg" alt="John Doe" />
+              </div>
               <div class="testimonial-content">
-                <h3 class="testimonial-name">Max Verstappen</h3>
-                <p class="testimonial-text">This developer have the skills you are looking for in a web developer</p>
+                <h3 class="testimonial-name">John Doe</h3>
+                <p class="testimonial-text">
+                  <em
+                    >"Anton joined our small startup at a critical time and
+                    completely turned things around. His problem-solving mindset
+                    and calm attitude made a huge difference in keeping the
+                    project on track."</em
+                  >
+                </p>
               </div>
             </div>
 
             <div class="testimonial-card">
-              <div class="testimonial-image"></div>
+              <div class="testimonial-image">
+                <img src="images/profile/pfp-female.jpg" alt="Jane Doe" />
+              </div>
               <div class="testimonial-content">
-                <h3 class="testimonial-name">Oscar Piastri</h3>
-                <p class="testimonial-text">Had him develop my bakery, and what can I say? Simply Lovely.</p>
+                <h3 class="testimonial-name">Jane Doe</h3>
+                <p class="testimonial-text">
+                  <em
+                    >"I had the chance to collaborate with Anton on a web
+                    systems project. You can always count on him to suggest
+                    better solutions or catch small issues before they become
+                    real problems."</em
+                  >
+                </p>
               </div>
             </div>
 
             <div class="testimonial-card">
-              <div class="testimonial-image"></div>
+              <div class="testimonial-image">
+                <img src="images/profile/pfp-male.jpg" alt="James Lawnly" />
+              </div>
               <div class="testimonial-content">
-                <h3 class="testimonial-name">Toto Wolff</h3>
-                <p class="testimonial-text">Developed my website with great designs and functionality.</p>
+                <h3 class="testimonial-name">James Lawnly</h3>
+                <p class="testimonial-text">
+                  <em
+                    >"Anton consistently demonstrates strong technical skills.
+                    Highly recommend him as your web developer</em
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -451,28 +562,44 @@
         <div class="contact-container">
           <div class="contact-icon-container">
             <h1>Visit My Socials</h1>
-            <a href="" class="icon-container">
+            <a
+              href="https://www.facebook.com/share/19npBU53eT/"
+              target="_blank"
+              class="icon-container"
+            >
               <div class="contact-icon">
                 <img src="images/icons/facebook.png" alt="Facebook" />
               </div>
               <p>Facebook</p>
             </a>
 
-            <a href="" class="icon-container">
+            <a
+              href="https://www.instagram.com/marqyyuu?igsh=MThxb2RrN2pha3M5Yw=="
+              target="_blank"
+              class="icon-container"
+            >
               <div class="contact-icon">
                 <img src="images/icons/instagram.png" alt="Instagram" />
               </div>
               <p>Instagram</p>
             </a>
 
-            <a href="" class="icon-container">
+            <a
+              href="https://github.com/QyuGH"
+              target="_blank"
+              class="icon-container"
+            >
               <div class="contact-icon">
                 <img src="images/icons/github.png" alt="GitHub" />
               </div>
               <p>GitHub</p>
             </a>
 
-            <a href="" class="icon-container">
+            <a
+              href="https://www.linkedin.com/in/mark-anton-cahutay-88453b347"
+              target="_blank"
+              class="icon-container"
+            >
               <div class="contact-icon">
                 <img src="images/icons/linkedin.png" alt="LinkedIn" />
               </div>
@@ -496,6 +623,10 @@
                   id=""
                   placeholder="Have anything in mind? Just send me an Email!"
                 ></textarea>
+              </div>
+
+              <div class="send-container">
+                <button type="submit" class="send-btn">Send</button>
               </div>
             </form>
           </div>

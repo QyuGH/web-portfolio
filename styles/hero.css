@@ -1,3 +1,4 @@
+
 @import url('preset.css');
 
 .hero {
@@ -7,6 +8,7 @@
     width: 100%;
     height: calc(100dvh - 4.5rem);
     margin-top: 4.5rem;
+    border: 1px solid white;
 }
 
 .hero-img-container, .hero-contents {
@@ -51,6 +53,11 @@
     border-radius: 1rem;
     width: 12rem;
     text-align: center;
+    transition: var(--transition-normal);
+}
+
+.hero-btn .btn:hover {
+  background-color: var(--color-accent);
 }
 
 .hero-icon {

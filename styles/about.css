@@ -1,4 +1,4 @@
-@import url('preset.css');
+@import url("preset.css");
 
 .about-highlights {
   display: flex;
@@ -6,35 +6,35 @@
 }
 
 .highlight {
-    width: 100%;
-    padding: 4rem;
-    text-align: center;
+  width: 100%;
+  padding: 4rem;
+  text-align: center;
 }
 
 .highlight h1 {
-    font-size: 4rem;
-    font-weight: 600;
+  font-size: 4rem;
+  font-weight: 600;
 }
 
 .highlight p {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .about-details {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem 4rem;
+  display: flex;
+  gap: var(--space-lg);
+  padding: 2rem 4rem;
 }
 
 .about-details h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .about-details div {
-    width: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 @media (max-width: 1024px) {
@@ -51,6 +51,22 @@
   }
 }
 
+@media (max-width: 900px) {
+  .about-highlights {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .highlight {
+    width: calc(50% - 0.5rem);
+    padding: 2rem;
+  }
+
+  .highlight h1 {
+    font-size: 2.75rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-highlights {
     flex-direction: column;
@@ -58,7 +74,8 @@
   }
 
   .highlight {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
   }
 
   .highlight h1 {
@@ -83,6 +100,7 @@
   .about-details p {
     font-size: 1rem;
   }
+  
 }
 
 @media (max-width: 480px) {

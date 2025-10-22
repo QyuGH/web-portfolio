@@ -57,13 +57,13 @@
   ------------------------------ */
   --shadow-soft: 0 0 10px rgba(139, 92, 246, 0.1);
   --shadow-glow: 0 0 15px var(--color-glow);
-  --shadow-glow-hover: 0 0 30px var(--color-glow-strong);
+  --shadow-glow-hover: 0 0 10px var(--color-glow-strong);
 
   /* ------------------------------
      🧭 Transitions
   ------------------------------ */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.4s ease;
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
 
   --font-secondary: 'BBH Sans Bartle', sans-serif;
 }
