@@ -34,7 +34,22 @@
   background: rgba(11, 11, 37, 0.7);
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15), 0 4px 16px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px) saturate(180%);
-  transition: var(--transition-normal);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+}
+
+.project-card.project-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card.project-visible:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-glow-hover);
 }
 
 /* Project Card Hover */

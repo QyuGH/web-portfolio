@@ -149,6 +149,29 @@
   transform: translateY(0);
 }
 
+/* Add these lines to your contact.css file for animation */
+
+/* Initial hidden state for contact elements */
+.contact-icon-container,
+.email-box {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Visible state when animated */
+.contact-icon-container.contact-visible,
+.email-box.contact-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Ensure hover effects still work after animation */
+.icon-container:hover {
+  transform: scale(1.01);
+}
+
 /* Tablet View (≤1024px) */
 @media (max-width: 1024px) {
   .contact-container {
