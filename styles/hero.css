@@ -1,5 +1,6 @@
 @import url("preset.css");
 
+/* Section hero */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -10,13 +11,7 @@
   padding: 1rem 2rem;
 }
 
-.hero-img-container,
-.hero-contents {
-  width: 100%;
-  height: 100%;
-}
-
-/* Initial state - hidden and positioned for animation */
+/* Section hero-contents */
 .hero-contents {
   display: flex;
   flex-direction: column;
@@ -24,20 +19,21 @@
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
-  
+
   /* Animation initial state */
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Active state - visible and in position */
 .hero-contents.fade-in-active {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Section hero-text */
 .hero-text {
   display: flex;
   flex-direction: column;
@@ -71,6 +67,7 @@
   50% { background-position: 100% 50%; }
 }
 
+/* Section hero-btn */
 .hero-btn {
   display: flex;
   justify-content: start;
@@ -81,9 +78,9 @@
 .hero-btn .btn {
   display: inline-block;
   padding: 0.75rem;
+  width: 12rem;
   border: 2px solid var(--color-accent);
   border-radius: 1rem;
-  width: 12rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -97,6 +94,7 @@
   transform: translateY(-2px);
 }
 
+/* Section hero-icon */
 .hero-icon {
   width: 100%;
   display: flex;
@@ -109,11 +107,10 @@
   width: 3rem;
   height: 3rem;
   border-radius: 0.5rem;
-  transition: var(--transition-normal);
   position: relative;
+  transition: var(--transition-normal);
 }
 
-/* Enhanced social icon hover */
 .hero-icon a::after {
   content: '';
   position: absolute;
@@ -137,26 +134,27 @@
   box-shadow: 0 5px 20px var(--color-glow);
 }
 
-/* Hero Image Container Animation */
+/* Section hero-img-container */
 .hero-img-container {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  
+
   /* Animation initial state */
   opacity: 0;
   transform: translateX(30px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Active state - visible and in position */
 .hero-img-container.fade-in-active {
   opacity: 1;
   transform: translateX(0) scale(1);
 }
 
+/* Section hero-img */
 .hero-img {
   width: 100%;
   max-width: 25rem;
@@ -166,12 +164,12 @@
   overflow: hidden;
   position: relative;
   border: 2px solid rgba(139, 92, 246, 0.3);
-  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2),
-              inset 0 0 20px rgba(139, 92, 246, 0.1);
+  box-shadow:
+    0 8px 32px rgba(139, 92, 246, 0.2),
+    inset 0 0 20px rgba(139, 92, 246, 0.1);
   transition: var(--transition-normal);
 }
 
-/* Subtle glow effect on hero image */
 .hero-img::before {
   content: '';
   position: absolute;
@@ -196,10 +194,12 @@
 .hero-img:hover {
   transform: scale(1.05);
   border-color: var(--color-accent);
-  box-shadow: 0 12px 48px rgba(139, 92, 246, 0.4),
-              inset 0 0 30px rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 12px 48px rgba(139, 92, 246, 0.4),
+    inset 0 0 30px rgba(139, 92, 246, 0.2);
 }
 
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   .hero {
     padding: 1rem 2rem;
@@ -238,13 +238,11 @@
   .hero-contents {
     align-items: center;
     padding: 1rem;
-    /* Adjust animation for mobile */
     transform: translateY(20px);
   }
 
   .hero-img-container {
     padding: 1rem;
-    /* Adjust animation for mobile */
     transform: translateY(-20px) scale(0.95);
   }
 

@@ -53,3 +53,15 @@ img {
   font-weight: 300;
   text-align: center;
 }
+
+@media (max-width: 768px){
+  .section-heading {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px){
+  .section-heading {
+    font-size: 2rem;
+  }
+}
