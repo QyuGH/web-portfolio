@@ -113,7 +113,6 @@
 
 /* --------------- MEDIA QUERIES --------------- */
 
-/* Desktop 769px and above */
 @media (min-width: 769px) {
   .testimonial-track {
     perspective: 62.5rem;
@@ -125,7 +124,6 @@
   }
 }
 
-/* Between 769px and 1024px */
 @media (max-width: 1024px) and (min-width: 769px) {
   .testimonial-slider {
     height: 28rem;
@@ -150,7 +148,6 @@
   }
 }
 
-/* Tablets and below (<= 768px) */
 @media (max-width: 768px) {
   .testimonial-slider {
     height: 26rem;
@@ -207,7 +204,6 @@
   }
 }
 
-/* Mobile (<= 480px) */
 @media (max-width: 480px) {
   .testimonial-slider {
     height: 24rem;

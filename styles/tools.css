@@ -67,15 +67,12 @@
 }
 
 /* Media Queries */
-
-/* For screens 1200px and below */
 @media (max-width: 1200px) {
   .tools-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* For screens 900px and below */
 @media (max-width: 900px) {
   .tools-container {
     grid-template-columns: repeat(3, 1fr);
@@ -95,7 +92,6 @@
   }
 }
 
-/* For screens 768px and below */
 @media (max-width: 768px) {
   .tool-icon {
     width: 3.5rem;
@@ -107,7 +103,6 @@
   }
 }
 
-/* For screens 600px and below */
 @media (max-width: 600px) {
   .tools-container {
     grid-template-columns: repeat(3, 1fr);
@@ -130,7 +125,6 @@
   }
 }
 
-/* For screens 400px and below */
 @media (max-width: 400px) {
   .tools-container {
     grid-template-columns: repeat(2, 1fr);

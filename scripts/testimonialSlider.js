@@ -1,3 +1,5 @@
+// Testimonial Slider Functionality
+
 const testimonialCards = document.querySelectorAll(".testimonial-card");
 const testimonialDots = document.querySelectorAll(".testimonial-dot");
 const sliderContainer = document.querySelector(".testimonial-slider");
@@ -7,13 +9,13 @@ let currentIndex = 1;
 let previousIndex = 1;
 const totalCards = testimonialCards.length;
 
-// Auto-play control
 let autoPlayInterval;
 let isAutoPlaying = true;
 
+// Reset all cards to default state
 function resetAllCards() {
   testimonialCards.forEach((card) => {
-    card.className = "testimonial-card"; // Reset to base class only
+    card.className = "testimonial-card";
     card.style.transform = "";
     card.style.opacity = "";
     card.style.zIndex = "";
@@ -22,23 +24,19 @@ function resetAllCards() {
   });
 }
 
+// Update slider for mobile or desktop
 function updateSlider() {
   const isMobile = window.innerWidth <= 768;
-
-  if (isMobile) {
-    updateMobileSlider();
-  } else {
-    updateDesktopSlider();
-  }
-
+  if (isMobile) updateMobileSlider();
+  else updateDesktopSlider();
   updateDots();
 }
 
+// Mobile slider behavior
 function updateMobileSlider() {
   const direction = currentIndex > previousIndex ? "next" : "prev";
 
   testimonialCards.forEach((card, index) => {
-    // Remove all animation classes
     card.classList.remove(
       "mobile-active",
       "slide-in-left",
@@ -47,30 +45,22 @@ function updateMobileSlider() {
       "slide-out-right"
     );
 
-    // Reset desktop 3D transforms
     card.style.transform = "";
     card.style.position = "absolute";
     card.style.left = "50%";
 
     if (index === currentIndex) {
-      // Active card - slide in
       card.classList.add("mobile-active");
       card.style.opacity = "1";
       card.style.zIndex = "10";
-      if (direction === "next") {
-        card.classList.add("slide-in-right");
-      } else {
-        card.classList.add("slide-in-left");
-      }
+      card.classList.add(
+        direction === "next" ? "slide-in-right" : "slide-in-left"
+      );
     } else if (index === previousIndex) {
-      // Previous active card - slide out
       card.style.zIndex = "5";
-      if (direction === "next") {
-        card.classList.add("slide-out-left");
-      } else {
-        card.classList.add("slide-out-right");
-      }
-      // After animation completes, hide it
+      card.classList.add(
+        direction === "next" ? "slide-out-left" : "slide-out-right"
+      );
       setTimeout(() => {
         if (index !== currentIndex) {
           card.style.opacity = "0";
@@ -78,20 +68,19 @@ function updateMobileSlider() {
         }
       }, 500);
     } else {
-      // Hidden cards
       card.style.opacity = "0";
       card.style.zIndex = "1";
     }
   });
 }
 
+// Desktop 3D carousel behavior
 function updateDesktopSlider() {
   const isTablet = window.innerWidth <= 1024;
   const radius = isTablet ? 350 : 450;
   const angleStep = (2 * Math.PI) / totalCards;
 
   testimonialCards.forEach((card, index) => {
-    // Remove mobile classes
     card.classList.remove(
       "mobile-active",
       "slide-in-left",
@@ -100,7 +89,6 @@ function updateDesktopSlider() {
       "slide-out-right"
     );
 
-    // Reset inline styles that might interfere
     card.style.left = "";
     card.style.position = "absolute";
 
@@ -119,12 +107,14 @@ function updateDesktopSlider() {
   });
 }
 
+// Update active dot indicator
 function updateDots() {
   testimonialDots.forEach((dot, index) => {
     dot.classList.toggle("active", index === currentIndex);
   });
 }
 
+// Slide navigation
 function nextSlide() {
   previousIndex = currentIndex;
   currentIndex = (currentIndex + 1) % totalCards;
@@ -143,11 +133,10 @@ function goToSlide(index) {
   updateSlider();
 }
 
+// Autoplay controls
 function startAutoPlay() {
   if (isAutoPlaying) {
-    autoPlayInterval = setInterval(() => {
-      nextSlide();
-    }, 3000);
+    autoPlayInterval = setInterval(() => nextSlide(), 3000);
   }
 }
 
@@ -160,7 +149,7 @@ function resumeAutoPlay() {
   startAutoPlay();
 }
 
-// Pause on hover
+// Pause/resume on hover
 sliderContainer.addEventListener("mouseenter", () => {
   isAutoPlaying = false;
   stopAutoPlay();
@@ -171,7 +160,7 @@ sliderContainer.addEventListener("mouseleave", () => {
   resumeAutoPlay();
 });
 
-// Dots navigation
+// Dot navigation
 testimonialDots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     stopAutoPlay();
@@ -203,7 +192,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// Desktop drag functionality
+// Desktop drag navigation
 let isDragging = false;
 let startPos = 0;
 let currentTranslate = 0;
@@ -227,11 +216,8 @@ testimonialTrack.addEventListener("mouseup", () => {
   isDragging = false;
   const movedBy = currentTranslate;
 
-  if (movedBy < -50) {
-    nextSlide();
-  } else if (movedBy > 50) {
-    prevSlide();
-  }
+  if (movedBy < -50) nextSlide();
+  else if (movedBy > 50) prevSlide();
 
   currentTranslate = 0;
   if (isAutoPlaying) resumeAutoPlay();
@@ -245,6 +231,7 @@ testimonialTrack.addEventListener("mouseleave", () => {
   }
 });
 
+// Update layout on resize
 let resizeTimeout;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimeout);
@@ -254,5 +241,6 @@ window.addEventListener("resize", () => {
   }, 100);
 });
 
+// Initialize slider
 updateSlider();
 startAutoPlay();
